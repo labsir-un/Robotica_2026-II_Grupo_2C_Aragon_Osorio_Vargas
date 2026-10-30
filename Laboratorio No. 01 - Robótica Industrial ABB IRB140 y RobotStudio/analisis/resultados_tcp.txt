@@ -1,0 +1,27 @@
+Puntos de calibracion leidos: 4
+
+TCP calculado (coords del flange, tool0): [83.356, 1.045, 165.397]
+Punto fijo de referencia en el mundo    : [524.71, -18.80, 440.27]
+
+Error residual por punto (distancia al punto fijo ajustado):
+   pTCP_Point1:   3.248 mm
+   pTCP_Point2:   1.848 mm
+   pTCP_Point3:   2.286 mm
+   pTCP_Point4:   2.252 mm
+
+   error medio 2.409 mm | maximo 3.248 mm | RMS 2.463 mm
+
+Tool2C declarado en el modulo : [81.849, -2.987, 164.221]
+Diferencia (calculado - decl) : [+1.507, +4.032, +1.176]  -> norma 4.462 mm
+Longitud del TCP: calculado 185.217 mm | declarado 183.512 mm
+
+--- Condicionamiento de la calibracion ---
+Variacion angular entre las orientaciones usadas:
+   Point1 vs Point2:  63.9 deg
+   Point1 vs Point3:  45.1 deg
+   Point1 vs Point4:  23.2 deg
+   Point2 vs Point3:  29.9 deg
+   Point2 vs Point4:  73.8 deg
+   Point3 vs Point4:  50.6 deg
+
+Numero de condicion del sistema de minimos cuadrados: 11.2

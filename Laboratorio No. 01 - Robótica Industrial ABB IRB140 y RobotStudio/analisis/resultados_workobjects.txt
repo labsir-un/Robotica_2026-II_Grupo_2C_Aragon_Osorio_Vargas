@@ -1,0 +1,13 @@
+A  (USB, enfrente del robot)
+   origen del object frame : [  700.0,  -110.0,   150.0]   rotacion total 180.0 deg
+   X de los 89 puntos :   485.6 ..   609.3
+   Y de los 89 puntos :   -84.0 ..    93.6
+   Z de los 89 puntos :   148.0 ..   148.0
+
+B  (final, sobre la banda)
+   origen del object frame : [  566.7,  -168.2,   328.8]   rotacion total 177.9 deg
+   X de los 89 puntos :   363.2 ..   540.8
+   Y de los 89 puntos :  -382.1 ..  -258.7
+   Z de los 89 puntos :   315.6 ..   322.1
+
+Rotacion relativa entre los dos WorkObjects: 90.0 deg

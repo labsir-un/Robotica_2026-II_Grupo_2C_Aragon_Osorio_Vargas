@@ -1,0 +1,550 @@
+MODULE Module1
+    TASK PERS wobjdata Workobject_1:=[FALSE,TRUE,"",[[3.26,-52.16,-204.15],[0.707106781,0,0,-0.707106781]],[[570,-110,100],[0,0,1,0]]];
+    PERS tooldata Tool2C:=[TRUE,[[81.849,-2.987,164.221],[0.965925826,0,0.258819045,0]],[1,[0,0,1],[1,0,0,0],0,0,0]];
+    
+    !Variable "Target_Aux" que almacena un valor de tipo robtarget
+    VAR robtarget Target_Aux;
+    !Variable "Alt_M" que almacena un valor de tipo robtarget
+    VAR num Alt_M := -10;
+    
+    CONST robtarget Target_N1_J10:=[[16.882,194.052,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_J20:=[[31.553,194.052,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_J30:=[[38.7,197.696,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_J40:=[[36.198,204.281,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_E10:=[[37.996,176.847,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_E20:=[[38.595,185.68,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_E30:=[[30.645,190.142,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_E40:=[[22.137,182.791,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_E50:=[[31.803,175.877,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S10:=[[23.294,161.488,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S20:=[[22.137,166.462,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S30:=[[26.61,172.655,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S40:=[[28.311,172.37,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S50:=[[34.649,164.022,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S60:=[[36.292,172.843,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S55:=[[39.154,167.651,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_U10:=[[22.512,157.547,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_U20:=[[33.085,157.547,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_U30:=[[39.154,152.073,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_U40:=[[34.743,146.911,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_U50:=[[22.512,146.911,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_10:=[[23.294,127.955,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_20:=[[22.137,132.929,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_30:=[[26.61,139.122,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_40:=[[34.649,130.489,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_50:=[[39.154,134.118,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_55:=[[36.135,131.38,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_S2_60:=[[36.292,139.31,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_A10:=[[37.996,116.663,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_A20:=[[16.882,106.465,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_A30:=[[37.996,96.392,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_A40:=[[27.439,100.615,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_A50:=[[27.439,112.377,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_R10:=[[38.778,93.577,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_R20:=[[22.512,93.577,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_R30:=[[30.645,93.577,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_R40:=[[24.124,89.761,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_R50:=[[22.325,83.911,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_a2_10:=[[36.495,70.711,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_a2_20:=[[38.896,77.749,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_a2_30:=[[30.739,83.129,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_a2_40:=[[22.422,77.557,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_a2_50:=[[22.137,75.434,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_a2_60:=[[37.84,66.785,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_G_10:=[[22.137,56.603,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_G_20:=[[30.583,64.142,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_G_30:=[[38.403,49.596,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_G_40:=[[45.84,54.965,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_G_50:=[[44.659,62.296,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_O_10:=[[30.583,29.795,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_O_20:=[[22.137,37.897,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_O_30:=[[30.645,45.999,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_O_40:=[[39.154,37.897,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_N_10:=[[22.512,26.042,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_N_20:=[[38.778,26.042,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_N_30:=[[30.645,26.042,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_N_40:=[[22.137,17.846,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_N_50:=[[38.778,15.187,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_Home:=[[607.586764328,-2.987005301,526.50620921],[0.25881904,-0.000000003,0.965925828,-0.000000003],[-1,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_G_05:=[[22.512,49.596,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N1_N_45:=[[28.174,12.372,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_L_10:=[[76.144,167.963,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_L_20:=[[53.168,167.651,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_OO_10:=[[54.044,96.705,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_OO_20:=[[65.336,107.028,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_OO_30:=[[76.691,96.705,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_OO_40:=[[65.336,86.351,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_P_10:=[[83.197,149.664,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_P_20:=[[60.62,149.985,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_P_30:=[[59.921,141.746,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_P_40:=[[72.577,137.402,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_P_50:=[[73.704,151.072,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_F_10:=[[54.419,202.185,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_F_20:=[[76.316,202.185,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_F_30:=[[54.419,189.203,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_F_40:=[[65.367,202.185,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_F_50:=[[64.898,190.861,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_I_10:=[[76.316,158.079,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_N2_I_20:=[[60.05,158.079,0],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_wbfisico:=[[676.74,-512.16,210.15],[0.753823,-0.0480724,0.0554896,0.652963],[-2,0,-1,0],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    CONST robtarget Target_Int:=[[16.882,194.052,-4],[1,0,0,0],[-1,0,-1,1],[9E+09,9E+09,9E+09,9E+09,9E+09,9E+09]];
+    !***********************************************************
+    !
+    ! Module:  Module1
+    !
+    ! Description:
+    !   <Insert description here>
+    !
+    ! Author: Jhon
+    !
+    ! Version: 1.0
+    !
+    !***********************************************************
+    
+    
+    !***********************************************************
+    !
+    ! Procedure main
+    !
+    !   This is the entry point of your program
+    !
+    !***********************************************************
+    PROC main()
+        Path_Home;
+        Path_N1_J;
+        Path_N1_E;
+        Path_N1_S1;
+        Path_N1_U;
+        Path_N1_S2;
+        Path_N1_A;
+        Path_N1_R;
+        Path_N1_A2;
+        Path_N1_G;
+        Path_N1_O;
+        Path_N1_N;
+        Path_Home;
+        
+    ENDPROC
+    
+    PROC Path_N1_J()
+        Target_Aux := Target_N1_J10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        
+        MoveJ Target_Int,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_J10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_J20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_J20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_J30,Target_N1_J40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_J40,v100,z10,Tool2C\WObj:=Workobject_1;
+    
+        Target_Aux := Target_N1_J40;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveL Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+
+    PROC Path_N1_E()
+        Target_Aux := Target_N1_E10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_E10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_E20,Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_E40,Target_N1_E50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_E50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_E30;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveL Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+    
+    PROC Path_N1_S1()
+        Target_Aux := Target_N1_S10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_S10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_S20,Target_N1_S30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_S50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_S50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_S55,Target_N1_S60,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_S60,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        !MoveC Target_N1_S55,Target_N1_S50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_S60;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveL Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+    PROC Path_N1_U()
+        Target_Aux := Target_N1_U10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_U10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_U20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_U20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_U30,Target_N1_U40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_U40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_U50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_U50;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveL Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+
+    PROC Path_N1_S2()
+        Target_Aux := Target_N1_S2_10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+
+        MoveJ Target_N1_S2_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_S2_20,Target_N1_S2_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_S2_40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_S2_40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_S2_50,Target_N1_S2_60,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_S2_60,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        !MoveC Target_N1_S2_55,Target_N1_S2_50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_S2_60;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveL Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+    
+    PROC Path_10()
+        MoveL Target_N1_J10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_J20,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_20()
+        MoveL Target_N1_J20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_J30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_J40,v100,z10,Tool2C\WObj:=Workobject_1;
+
+        
+    ENDPROC
+    PROC Path_30()
+        MoveJ Target_N1_E10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_E20,Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_40()
+        MoveJ Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_E40,Target_N1_E50,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    PROC Path_50()
+        MoveJ Target_N1_E50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_E30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_60()
+        MoveJ Target_N1_S10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_S20,Target_N1_S30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    PROC Path_70()
+        MoveJ Target_N1_S30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_80()
+        MoveJ Target_N1_S60,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_S55,Target_N1_S50,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+        
+
+    
+
+    PROC Path_90()
+        MoveJ Target_N1_U10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_U20,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_100()
+        MoveJ Target_N1_U20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_U30,Target_N1_U40,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_110()
+        MoveJ Target_N1_U40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_U20,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+
+    
+    
+    PROC Path_120()
+    ENDPROC
+    PROC Path_130()
+    ENDPROC
+    
+    PROC Path_140()
+    ENDPROC
+        
+        
+    PROC Path_N1_A()
+        Target_Aux := Target_N1_A10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_A10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_A20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_A20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_A30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_A40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_A50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_A50;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+    
+    PROC Path_150()
+        MoveJ Target_N1_A10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_A20,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_160()
+        MoveJ Target_N1_A20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_A30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_170()
+        MoveJ Target_N1_A40,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_A50,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+
+    
+    PROC Path_N1_R()
+        Target_Aux := Target_N1_R10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_R10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_R20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_R30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_R40,Target_N1_R50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_R40;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+    
+    PROC Path_180()
+        MoveJ Target_N1_R10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_R20,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_190()
+        MoveJ Target_N1_R30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_R40,Target_N1_R50,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    PROC Path_N1_A2()
+        Target_Aux := Target_N1_a2_10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_a2_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_a2_30,Target_N1_a2_50,v100,z10,Tool2C\WObj:=Workobject_1;
+       ! MoveJ Target_N1_a2_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        !MoveC Target_N1_a2_40,Target_N1_a2_50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_a2_50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_a2_60,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_a2_60;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;   
+    ENDPROC
+    
+    
+    PROC Path_200()
+        MoveJ Target_N1_a2_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_a2_20,Target_N1_a2_30,v100,z10,Tool2C\WObj:=Workobject_1;
+
+    ENDPROC
+    PROC Path_210()
+        MoveJ Target_N1_a2_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_a2_40,Target_N1_a2_50,v100,z10,Tool2C\WObj:=Workobject_1;
+
+    ENDPROC
+    PROC Path_220()
+        MoveJ Target_N1_a2_50,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_a2_10,Target_N1_a2_60,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+
+    PROC Path_N1_G()
+        Target_Aux := Target_N1_G_30;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_G_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_G_20,Target_N1_G_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_G_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_G_05,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_G_05,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_G_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_G_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_G_40,Target_N1_G_50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_G_40;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC
+    
+    
+    
+    PROC Path_230()
+        MoveJ Target_N1_G_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_G_20,Target_N1_G_30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    PROC Path_240()
+        MoveJ Target_N1_G_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_G_30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_250()
+        MoveJ Target_N1_G_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_G_40,Target_N1_G_50,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    
+    PROC Path_N1_O()
+        Target_Aux := Target_N1_O_10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_O_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_O_20,Target_N1_O_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_O_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_O_40,Target_N1_O_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_O_10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC    
+    
+    PROC Path_260()
+        MoveJ Target_N1_O_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_O_20,Target_N1_O_30,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    PROC Path_270()
+        MoveJ Target_N1_O_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_O_40,Target_N1_O_10,v100,z10,Tool2C\WObj:=Workobject_1;
+     ENDPROC 
+     
+    PROC Path_N1_N()
+        Target_Aux := Target_N1_N_10;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        MoveJ Target_N1_N_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_N_20,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_N_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_N_40,Target_N1_N_45,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_N_50, v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveJ Target_N1_N_50,v100,z10,Tool2C\WObj:=Workobject_1;
+        
+        Target_Aux := Target_N1_N_50;  !asignar a Target_Aux el valor de Target_G90.
+        Target_Aux.trans.z := Target_Aux.trans.z + Alt_M;  ! Modificar el valor de esa corrdenada y sumarle Alt_M         
+        MoveJ Target_Aux,v100,z10,Tool2C\WObj:=Workobject_1;    
+    ENDPROC  
+    
+
+    PROC Path_280()
+        MoveJ Target_N1_N_10,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_N_20,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_290()
+        MoveJ Target_N1_N_30,v100,z10,Tool2C\WObj:=Workobject_1;
+        MoveC Target_N1_N_40,Target_N1_N_50,v100,z10,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    
+    
+    PROC Path_Home()
+         MoveJ Target_Home,v100,z10,Tool2C\WObj:=wobj0;
+    ENDPROC
+    
+    
+    
+    PROC Path_300()
+        MoveL Target_N1_S2_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_S2_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_S2_30,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_310()
+        MoveL Target_N1_S2_40,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_S2_50,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_S2_60,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_320()
+        MoveL Target_N1_G_05,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_G_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_330()
+        MoveL Target_N1_N_45,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N1_N_50,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_340()
+
+        
+        
+        
+    ENDPROC
+    PROC Path_350()
+        MoveL Target_N2_L_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_L_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_360()
+        MoveL Target_N2_OO_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_OO_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_OO_30,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_370()
+        MoveL Target_N2_OO_30,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_OO_40,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_OO_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_380()
+        MoveL Target_N2_P_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_P_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_390()
+        MoveL Target_N2_P_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_P_30,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_400()
+        MoveL Target_N2_P_30,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_P_40,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_P_50,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_410()
+        MoveL Target_N2_F_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_F_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_420()
+        MoveL Target_N2_F_30,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_F_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_430()
+        MoveL Target_N2_F_40,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_F_50,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_440()
+        MoveL Target_N2_I_10,v1000,z100,Tool2C\WObj:=Workobject_1;
+        MoveL Target_N2_I_20,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+    PROC Path_450()
+        MoveL Target_Int,v1000,z100,Tool2C\WObj:=Workobject_1;
+    ENDPROC
+ENDMODULE
