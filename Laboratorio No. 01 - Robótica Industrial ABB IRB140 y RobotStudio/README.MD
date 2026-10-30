@@ -161,9 +161,33 @@ Las coordenadas de los elementos de la celda, referidas al sistema de la base de
 
 ### 4.1. Diseño
 
-La herramienta es un soporte porta-marcador fijado al flange del IRB 140. El diseño permite sujetar un marcador borrable manteniendo el trazo estable sobre la superficie de trabajo.
+La herramienta es un soporte porta-marcador fijado al flange del IRB 140, fabricado en **PETG** por impresión 3D. Está compuesta por **dos piezas que se unen mediante un mecanismo de cerrojo**, lo que permite retirar y reemplazar el marcador sin desmontar la brida del robot. El diseño se estandarizó para un marcador **EXPO Dry Erase**.
 
-Modelos disponibles en [`modelado/`](./modelado): `gripperLab1.3mf`, `gripper pieza.sat`, `gripper pieza - Part 4.step`, `Assembly 1.step`, `Tapa.stp`.
+<div align="center">
+
+<img src="./modelado/Plano_de_Fabricacion.png" alt="Plano de fabricación de la herramienta" width="100%">
+
+*Plano de fabricación de la herramienta porta-marcador. Versión imprimible: [`Plano_de_Fabricacion.pdf`](./modelado/Plano_de_Fabricacion.pdf)*
+
+</div>
+
+### Dimensiones principales
+
+| Característica | Valor |
+|---|---|
+| Diámetro de la brida de montaje | Ø50.00 mm |
+| Espesor de la brida | 5.00 mm |
+| Agujeros de fijación | 4 × Ø6.00 mm, distribución 14.14 × 14.14 mm |
+| Longitud total | 157.37 mm |
+| Altura del conjunto | 112.49 mm |
+| Ángulo del cuerpo respecto a la brida | 60.00° |
+| Diámetro de alojamiento del marcador | Ø4.00 mm |
+| Material | PETG |
+| Tolerancias | lineal ±0.1 mm, angular ±0.1° |
+
+La inclinación de 60° del cuerpo respecto al plano de la brida es coherente con la rotación de 30° alrededor del eje Y declarada en el `tooldata`, que corresponde al mismo ángulo medido desde el eje de la herramienta.
+
+Modelos CAD disponibles en [`modelado/`](./modelado): `gripperLab1.3mf`, `gripper pieza.sat`, `gripper pieza - Part 4.step`, `Assembly 1.step`, `Tapa.stp`.
 
 Los tornillos de fijación se seleccionaron de modo que su longitud no excediera la suma del espesor del flange más el espesor de la brida de la herramienta, según la indicación dada para la práctica.
 
