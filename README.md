@@ -60,7 +60,7 @@ Aquí se documentan los laboratorios, avances, resultados y la presentación de 
 - **Nombre completo:** Jesús Manuel Aragón Buitrago
 - **Carrera:** Ingeniería Mecatrónica
 - **Correo institucional:** jaragonb@unal.edu.co
-- **Usuario de GitHub:** [usuariogithub](https://github.com/usuariogithub)
+- **Usuario de GitHub:** [JysusCrack2321](https://github.com/JysusCrack2321)
 - **Rol en el equipo:** Ej. Integración ROS 2, documentación, simulación
 - **Intereses:** Robótica móvil, visión artificial, automatización
 - **Descripción breve:**  
