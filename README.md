@@ -11,7 +11,7 @@
 
 <h2>Profesores: <br>Pedro Fabián Cárdenas Herrera <br> Manuel Felipe Carranza Montenegro</h2>
 
-<h4>Nombre Integrante 1<br>
+<h4>Jesús Manuel Aragón Buitrago<br>
     Nombre Integrante 2<br>
     Nombre Integrante 3</h4>
 
@@ -61,10 +61,10 @@ Aquí se documentan los laboratorios, avances, resultados y la presentación de 
 - **Carrera:** Ingeniería Mecatrónica
 - **Correo institucional:** jaragonb@unal.edu.co
 - **Usuario de GitHub:** [JysusCrack2321](https://github.com/JysusCrack2321)
-- **Rol en el equipo:** Ej. Integración ROS 2, documentación, simulación
-- **Intereses:** Robótica móvil, visión artificial, automatización
+- **Rol en el equipo:** Gestión del repositorio y documentación, y programación en RAPID
+- **Intereses:** Robótica móvil y aprendizaje por refuerzo aplicado a robótica
 - **Descripción breve:**  
-  Escribe aquí una breve presentación personal y académica del integrante.
+  Estudiante de Ingeniería Mecatrónica de la Universidad Nacional de Colombia. En este curso se encarga de mantener el repositorio y la documentación de los laboratorios, además de participar en la programación de las rutinas.
 
 ---
 

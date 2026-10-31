@@ -47,6 +47,7 @@
 | [`rapid/`](./rapid) | Módulos RAPID: código final, calibración del TCP y versiones históricas |
 | [`modelado/`](./modelado) | Modelo CAD de la herramienta (STEP, SAT, 3MF) |
 | [`analisis/`](./analisis) | Scripts de verificación de la calibración y de los WorkObjects |
+| [`evidencias/`](./evidencias) | Capturas del simulador con el estado de las señales digitales |
 
 ---
 
@@ -344,7 +345,16 @@ La posición de la estación de decoración se determinó **por tiempo de despla
 
 ### 6.3. Evidencia de funcionamiento
 
-El funcionamiento de las ocho señales y el movimiento bidireccional de la banda se documentan en el [video de la práctica](https://youtu.be/c02VIXdxSYY).
+Capturas del simulador con el panel de E/S del controlador `IRB140_6_81`, tomadas durante la ejecución de cada rutina. En conjunto documentan las ocho señales de la celda:
+
+| | |
+|---|---|
+| <img src="./evidencias/rutina1_decoracion_DI01_DO01.png" width="420"><br>**Rutina 1 — Decoración.** `DI_01 = 1` y `DO_01 = 1` mientras el robot traza la decoración sobre el pastel. | <img src="./evidencias/rutina1_banda_FWD_BWD.png" width="420"><br>**Rutina 1 — Movimiento de banda.** `FWD_Conveyor = 1` y `BWD_Conveyor = 1` de forma simultánea: sentido seleccionado y motor habilitado. |
+| <img src="./evidencias/rutina2_mantenimiento_DI02_DO02.png" width="420"><br>**Rutina 2 — Posición de mantenimiento.** `DI_02 = 1` y `DO_02 = 1` con el robot en la pose de acceso a la herramienta. | <img src="./evidencias/rutina3_farmear_DI03_DO03.png" width="420"><br>**Rutina 3 — Farmear Aura.** `DI_03 = 1` y `DO_03 = 1` durante la ejecución de la rutina libre. |
+
+La captura de la banda confirma el esquema descrito en 6.2: ambas señales de la banda aparecen activas al mismo tiempo porque no representan dos sentidos de giro, sino dirección y habilitación.
+
+El ciclo completo, con el movimiento bidireccional de la banda y el trazo real sobre el pastel, se documenta en el [video de la práctica](https://youtu.be/c02VIXdxSYY).
 
 ---
 
