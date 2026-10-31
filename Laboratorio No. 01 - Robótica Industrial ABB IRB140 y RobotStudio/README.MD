@@ -46,6 +46,7 @@
 |---|---|
 | [`rapid/`](./rapid) | Módulos RAPID: código final, calibración del TCP y versiones históricas |
 | [`modelado/`](./modelado) | Modelo CAD de la herramienta (STEP, SAT, 3MF) |
+| [`planta/`](./planta) | Plano de planta de la celda y boceto de levantamiento |
 | [`analisis/`](./analisis) | Scripts de verificación de la calibración y de los WorkObjects |
 | [`evidencias/`](./evidencias) | Capturas del simulador con el estado de las señales digitales |
 
@@ -143,6 +144,37 @@ flowchart LR
 ---
 
 ## 3. Plano de planta
+
+Levantamiento dimensional de la celda del robot **Cain** (IRB 140 con banda transportadora), realizado en Autodesk Inventor a partir de las medidas tomadas en el laboratorio.
+
+<div align="center">
+
+<img src="./planta/Plano_de_Planta.png" alt="Plano de planta de la celda" width="85%">
+
+*Plano de planta de la celda. Versión imprimible: [`Plano_de_Planta.pdf`](./planta/Plano_de_Planta.pdf)*
+
+</div>
+
+| Dimensión | Valor (mm) |
+|---|---|
+| Longitud de la banda transportadora | 1700 |
+| Ancho de la banda transportadora | 200 |
+| Altura de la mesa de la banda | 210 |
+| Altura del pedestal del robot | 400 |
+| Distancia del eje del robot al extremo cercano de la banda | 830 |
+| Distancia del eje del robot al extremo opuesto de la banda | 490 |
+
+La banda está dispuesta **ladeada respecto al robot**, no paralela a los ejes de la base, y su superficie presenta una ligera inclinación. Esto es justamente lo que obliga al ajuste de 3° del plano de trabajo descrito en la [sección 5](#ajuste-del-plano-de-trabajo).
+
+<div align="center">
+
+<img src="./planta/Boceto_Montaje.jpg" alt="Boceto del montaje tomado en laboratorio" width="55%">
+
+*Boceto de campo con las medidas de los montajes de los robots Abel y Cain*
+
+</div>
+
+### Coordenadas de los elementos
 
 Las coordenadas de los elementos de la celda, referidas al sistema de la base del robot y obtenidas de la definición de los `robtarget` y de los `wobjdata` del módulo, son:
 

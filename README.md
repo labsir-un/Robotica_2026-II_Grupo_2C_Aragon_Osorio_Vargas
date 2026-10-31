@@ -12,8 +12,8 @@
 <h2>Profesores: <br>Pedro Fabián Cárdenas Herrera <br> Manuel Felipe Carranza Montenegro</h2>
 
 <h4>Jesús Manuel Aragón Buitrago<br>
-    Nombre Integrante 2<br>
-    Nombre Integrante 3</h4>
+    Andrés Felipe Osorio Ortiz<br>
+    Jhon Yunior Vargas Basurco</h4>
 
 <p>
   <img alt="Ubuntu 24.04 LTS" src="https://img.shields.io/badge/Ubuntu-24.04%20LTS-E95420?logo=ubuntu&logoColor=white">
@@ -36,7 +36,7 @@
 
 ## Descripción
 
-Este repositorio corresponde al desarrollo de las actividades del curso de **Robótica 2026-I**.  
+Este repositorio corresponde al desarrollo de las actividades del curso de **Robótica 2026-II**.  
 Aquí se documentan los laboratorios, avances, resultados y la presentación de los integrantes del equipo.
 
 ---
@@ -73,14 +73,14 @@ Aquí se documentan los laboratorios, avances, resultados y la presentación de 
   <img src="./assets/integrantes/integrante2.jpg" alt="Foto integrante 2" style="border-radius: 50%; width: 180px;"><br>
 </div>
 
-- **Nombre completo:** Nombre Apellido
+- **Nombre completo:** Andrés Felipe Osorio Ortiz
 - **Carrera:** Ingeniería Mecatrónica
-- **Correo institucional:** nombre@unal.edu.co
-- **Usuario de GitHub:** [usuariogithub](https://github.com/usuariogithub)
-- **Rol en el equipo:** Ej. Modelado, programación, control
-- **Intereses:** Manipulación, ROS 2, control de robots
+- **Correo institucional:** aosorioor@unal.edu.co
+- **Usuario de GitHub:** [aosorioor](https://github.com/aosorioor)
+- **Rol en el equipo:** Diseño CAD, elaboración de planos y levantamiento dimensional de la planta
+- **Intereses:** Robótica industrial y plantas de producción
 - **Descripción breve:**  
-  Escribe aquí una breve presentación personal y académica del integrante.
+  Estudiante de Ingeniería Mecatrónica de la Universidad Nacional de Colombia. Sus intereses principales son el diseño mecánico, el automovilismo y las áreas afines.
 
 ---
 
@@ -89,12 +89,12 @@ Aquí se documentan los laboratorios, avances, resultados y la presentación de 
   <img src="./assets/integrantes/integrante3.jpg" alt="Foto integrante 3" style="border-radius: 50%; width: 180px;"><br>
 </div>
 
-- **Nombre completo:** Nombre Apellido
-- **Carrera:** Ingeniería Mecatrónica
-- **Correo institucional:** nombre@unal.edu.co
-- **Usuario de GitHub:** [usuariogithub](https://github.com/usuariogithub)
-- **Rol en el equipo:** Ej. Documentación, pruebas, simulación
-- **Intereses:** Robótica industrial, sistemas autónomos, IA
+- **Nombre completo:** Jhon Yunior Vargas Basurco
+- **Carrera:** Ingeniería Electrónica
+- **Correo institucional:** jhvargasba@unal.edu.co
+- **Usuario de GitHub:** [JhonVargasB](https://github.com/JhonVargasB)
+- **Rol en el equipo:** Programación e integración del código RAPID
+- **Intereses:** Robótica, sistemas embebidos e inteligencia artificial
 - **Descripción breve:**  
-  Escribe aquí una breve presentación personal y académica del integrante.
+  Estudiante de Ingeniería Electrónica de la UNSAAC, actualmente en intercambio académico en la Universidad Nacional de Colombia. Cuenta con experiencia en el desarrollo de proyectos tecnológicos multidisciplinarios, participando en competencias de ingeniería y actividades de investigación aplicada.
 
