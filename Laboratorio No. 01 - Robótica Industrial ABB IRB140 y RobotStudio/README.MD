@@ -311,7 +311,7 @@ Esto permite trasladar y rotar la trayectoria completa como un cuerpo rígido si
 
 La **rotación relativa entre ambos WorkObjects es de 90.0°** y el origen se desplazó `[−133.3, −58.2, +178.8]` mm. El WorkObject B corresponde a la estación de decoración sobre la banda, a una altura de trabajo de unos 320 mm.
 
-Verificación realizada con [`analisis/comparar_workobjects.py`](./analisis/comparar_workobjects.py): los **89 `robtarget` de la trayectoria son idénticos en ambos módulos**, lo que confirma que únicamente se modificó el sistema de coordenadas de referencia. El procedimiento seguido fue calibrar físicamente el WorkObject sobre la banda con el robot real y reubicar después el WorkObject de la simulación en esa misma pose con su orientación correspondiente.
+Verificación realizada con [`analisis/comparar_workobjects.py`](./analisis/comparar_workobjects.py): los **89 `robtarget` de la trayectoria son idénticos en ambos módulos**, lo que confirma que únicamente se modificó el sistema de coordenadas de referencia. El WorkObject sobre la banda se definió con el robot real: se llevó manualmente la herramienta hasta el punto que debía servir de origen del sistema de referencia y esa pose se registró para disponer de ella en el programa RAPID. La orientación no se dedujo de la geometría de la banda, sino que se eligió de modo que la aproximación del marcador al plano de trabajo quedara dentro de una configuración alcanzable por el manipulador. El WorkObject de la simulación se reubicó después en esa misma pose.
 
 ### Ajuste del plano de trabajo
 
