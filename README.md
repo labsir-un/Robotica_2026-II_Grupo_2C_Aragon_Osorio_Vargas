@@ -98,3 +98,7 @@ Aquí se documentan los laboratorios, avances, resultados y la presentación de 
 - **Descripción breve:**  
   Estudiante de Ingeniería Electrónica de la UNSAAC, actualmente en intercambio académico en la Universidad Nacional de Colombia. Cuenta con experiencia en el desarrollo de proyectos tecnológicos multidisciplinarios, participando en competencias de ingeniería y actividades de investigación aplicada.
 
+
+---
+
+> **Nota sobre el uso de herramientas de IA:** se empleó asistencia de IA (Claude) para la redacción y estructuración de los informes en Markdown. El desarrollo técnico —diseño CAD, calibración de la herramienta, programación en RAPID, montaje y ejecución de las prácticas— fue realizado íntegramente por los integrantes del equipo.
